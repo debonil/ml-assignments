@@ -27,21 +27,21 @@ def confusion_matrix(actual, pred):
             else:
                 tn += 1
 
-    return [[tp, fn], [fp, tn]]
+    return np.array([[tp, fn], [fp, tn]])
 
 
 # %%
-def train_test_split(df, target, test_size=0.2, random_state=41):
-    trainX = df.sample(frac=test_size, random_state=random_state)
+def train_test_split(df, target, train_size, random_state):
+    trainX = df.sample(frac=train_size, random_state=random_state)
     testX = df.drop(trainX.index)
-    trainY = target.sample(frac=test_size, random_state=random_state)
+    trainY = target.sample(frac=train_size, random_state=random_state)
     testY = target.drop(trainY.index)
     return trainX, testX, trainY, testY
 
 
 # %%
 class Node():
-    def __init__(self, feature_index: float = None, threshold=None, left=None, right=None, info_gain=None, value=None):
+    def __init__(self, feature_index: float = None, threshold: float = None, left=None, right=None, info_gain: float = None, value: float = None):
 
         self.feature_index = feature_index
         self.threshold = threshold
@@ -53,7 +53,7 @@ class Node():
 
 # %%
 class DecisionTreeClassifier():
-    def __init__(self, min_samples_split=0, max_depth=0):
+    def __init__(self, min_samples_split=2, max_depth=10):
         self.root = None
         self.min_samples_split = min_samples_split
         self.max_depth = max_depth
@@ -101,7 +101,8 @@ class DecisionTreeClassifier():
                     y, left_y, right_y = dataset[:, -
                                                  1], dataset_left[:, -1], dataset_right[:, -1]
 
-                    curr_info_gain = self.information_gain(y, left_y, right_y)
+                    curr_info_gain = self.information_gain(
+                        y, left_y, right_y, mode="gini")
 
                     if curr_info_gain > max_info_gain:
                         best_split["feature_index"] = feature_index
@@ -172,9 +173,6 @@ class DecisionTreeClassifier():
             self.print_tree(tree.right, indent + indent)
 
     def fit(self, X, Y):
-
-        print(X.shape)
-        print(Y.shape)
         dataset = np.concatenate((X, Y), axis=1)
         self.root = self.build_tree(dataset)
 
@@ -192,13 +190,6 @@ class DecisionTreeClassifier():
         else:
             return self.make_prediction(x, tree.right)
 
-    def score(self, X, Y):
-
-        print(X.shape)
-        print(Y.shape)
-        dataset = np.concatenate((X, Y), axis=1)
-        self.root = self.build_tree(dataset)
-
 
 # %%
 df = pd.read_csv('data-ques-3\dataset.csv')
@@ -214,7 +205,7 @@ df1 = df1.drop('target', axis=1)
 # %%
 # Splitting the data - 80:20 ratio
 X_train, X_test, y_train, y_test = train_test_split(
-    df1, target, test_size=0.2, random_state=41)
+    df1, target, train_size=0.75, random_state=80)
 print("Training split input- ", X_train.shape)
 print("Training split input- ", y_train.shape)
 print("Testing split input- ", X_test.shape)
@@ -225,7 +216,7 @@ print(y_train.head())
 
 # %%
 # Defining the decision tree algorithm
-dtree = DecisionTreeClassifier(min_samples_split=3, max_depth=3)
+dtree = DecisionTreeClassifier(min_samples_split=3, max_depth=5)
 dtree.fit(X_train.values, y_train.values.reshape(-1, 1))
 print('Decision Tree Classifier Created')
 
@@ -243,10 +234,58 @@ print(cm)
 plt.figure(figsize=(5, 5))
 sns.heatmap(data=cm, linewidths=.5, annot=True, square=True,  cmap='Blues')
 plt.ylabel('Actual label')
-#all_sample_title = 'Accuracy Score: {0}'.format(dtree.score(X_test, y_test))
-#plt.title(all_sample_title, size = 15)
+plt.xlabel('Predicted label')
+x = (cm[0, 0]+cm[1, 1])/sum(cm.flatten())
+all_sample_title = 'Accuracy Score: {0}'.format(x)
+plt.title(all_sample_title, size=15)
 
 
 # %%
-# Visualising the graph without the use of graphvizplt.figure(figsize = (20,20))
+# Visualize Tree
 dtree.print_tree()
+
+# %%
+
+
+def testWithHyperParameter(min_samples_split=3, max_depth=10, train_size=0.8, random_state=80, log=True):
+    X_train, X_test, y_train, y_test = train_test_split(
+        df1, target, train_size=train_size, random_state=random_state)
+    dtree = DecisionTreeClassifier(
+        min_samples_split=min_samples_split, max_depth=max_depth)
+    dtree.fit(X_train.values, y_train.values.reshape(-1, 1))
+    if log:
+        print('Decision Tree Classifier Created with min_samples_split={0}, max_depth={1},train_size={2}, random_state={3}'.format(
+            min_samples_split, max_depth, train_size, random_state))
+    y_pred = dtree.predict(X_test.values)
+    cm = confusion_matrix(y_test.values.reshape(-1, 1), y_pred)
+    x = (cm[0, 0]+cm[1, 1])/sum(cm.flatten())
+    if log:
+        print('Accuracy Score: {0}'.format(x))
+        print('Confusion Matrix: \n{0}'.format(cm))
+        print("Classification report - \n",
+              classification_report(y_test.values.reshape(-1, 1), y_pred))
+    return x
+
+
+# %%
+testWithHyperParameter(min_samples_split=3, max_depth=3, train_size=0.1)
+testWithHyperParameter(min_samples_split=3, max_depth=3, train_size=0.5)
+testWithHyperParameter(min_samples_split=3, max_depth=5, train_size=0.6)
+testWithHyperParameter(min_samples_split=5, max_depth=5, train_size=0.75)
+testWithHyperParameter(min_samples_split=5, max_depth=10, train_size=0.9)
+
+
+# %%
+train_size = []
+for i in range(1, 20):
+    x = i/20
+    y = testWithHyperParameter(
+        min_samples_split=3, max_depth=5, train_size=x, random_state=47, log=False)
+    train_size.append([x, y])
+train_size = np.array(train_size)
+plt.figure(figsize=(5, 5))
+plt.plot(train_size[:, 0], train_size[:, 1], label="train_size", marker='o')
+plt.xlabel("Training Size")
+plt.ylabel("Accuracy")
+plt.legend()
+plt.show()
