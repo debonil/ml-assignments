@@ -1,0 +1,11 @@
+Refs:
+Q1.
+1. https://scikit-learn.org/stable/modules/naive_bayes.html
+2. https://github.com/tigju/Naive-Bayes-Classifier-from-scratch/blob/main/naive_bayes.ipynb
+
+Q2.
+1.https://www.kaggle.com/mehmetlaudatekman/filtering-spam-e-mails-power-of-naive-bayes
+
+Q4.
+1.https://www.machinelearningplus.com/statistics/mahalanobis-distance/
+2.https://datascience.stackexchange.com/questions/71804/how-to-perform-one-hot-encoding-on-multiple-categorical-columns
