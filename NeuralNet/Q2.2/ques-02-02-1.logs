@@ -1,0 +1,116 @@
+torch.Size([64, 1, 28, 28])
+torch.Size([64])
+
+
+Training with 	Loss Function = NLLLoss(), 	Learning Rate = 0.003, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 2.5658482789993284
+Overall Accuracy Score: 0.975
+Classwise Accuracy Score: [0.9964 0.9973 0.9952 0.9943 0.9948 0.9947 0.9954 0.9945 0.9939 0.9929]
+
+
+
+Training with 	Loss Function = MSELoss(), 	Learning Rate = 0.003, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 7.808586394786834
+Overall Accuracy Score: 0.938
+Classwise Accuracy Score: [0.9916 0.9944 0.9846 0.9873 0.9871 0.9863 0.9899 0.9874 0.9839 0.9833]
+
+
+
+Training with 	Loss Function = KLDivLoss(), 	Learning Rate = 0.003, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 3.6359249035517376
+Overall Accuracy Score: 0.928
+Classwise Accuracy Score: [0.992  0.9928 0.9832 0.9835 0.986  0.9811 0.9886 0.9867 0.9798 0.9831]
+
+
+Training with 	Loss Function = CrossEntropyLoss(), 	Learning Rate = 0.003, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 2.653095289071401
+Overall Accuracy Score: 0.975
+Classwise Accuracy Score: [0.9966 0.9973 0.9949 0.9948 0.9943 0.9955 0.9957 0.9936 0.994  0.9933]
+
+
+Training with 	Loss Function = NLLLoss(), 	Learning Rate = 0.99, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 2.6069637854894
+Overall Accuracy Score: 0.114
+Classwise Accuracy Score: [0.902  0.1135 0.8968 0.899  0.9018 0.9108 0.9042 0.8972 0.9026 0.8991]
+
+
+Training with 	Loss Function = NLLLoss(), 	Learning Rate = 0.5, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 2.7291388670603434
+Overall Accuracy Score: 0.114
+Classwise Accuracy Score: [0.902  0.1135 0.8968 0.899  0.9018 0.9108 0.9042 0.8972 0.9026 0.8991]
+
+
+Training with 	Loss Function = NLLLoss(), 	Learning Rate = 0.01, 	Hidden Layer = [128, 64]
+
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+
+Training Time (in minutes) = 3.002375260988871
+Overall Accuracy Score: 0.979
+Classwise Accuracy Score: [0.9976 0.9978 0.9953 0.9951 0.9948 0.9959 0.9958 0.9943 0.9962 0.9944]

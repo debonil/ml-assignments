@@ -1,0 +1,83 @@
+torch.Size([64, 1, 28, 28])
+torch.Size([64])
+Training with Loss Function = NLLLoss(), Learning Rate = 0.003, Hidden Layer = [128, 64]
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+Epoch 0 - Training loss: 0.6140706130007564
+Epoch 1 - Training loss: 0.27817717138955844
+Epoch 2 - Training loss: 0.21473293290384163
+Epoch 3 - Training loss: 0.17356766454939013
+Epoch 4 - Training loss: 0.1436173382814902
+Epoch 5 - Training loss: 0.12350359803307921
+Epoch 6 - Training loss: 0.10702797282499069
+Epoch 7 - Training loss: 0.09585220511081313
+Epoch 8 - Training loss: 0.08686744314141825
+Epoch 9 - Training loss: 0.07925644814114231
+Epoch 10 - Training loss: 0.07087531847271647
+Epoch 11 - Training loss: 0.06540338494139773
+Epoch 12 - Training loss: 0.0605106981821668
+Epoch 13 - Training loss: 0.057212991592065214
+Epoch 14 - Training loss: 0.05137712754873134
+
+Training Time (in minutes) = 2.7720311443010965
+Overall Accuracy Score: 0.974
+Classwise Accuracy Score: [0.9969 0.9974 0.9944 0.9932 0.9953 0.9928 0.9948 0.9947 0.9939 0.994 ]
+Training with Loss Function = CrossEntropyLoss(), Learning Rate = 0.003, Hidden Layer = [128, 64]
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+Epoch 0 - Training loss: 0.6418808824710374
+Epoch 1 - Training loss: 0.2783915338668424
+Epoch 2 - Training loss: 0.21806431047395983
+Epoch 3 - Training loss: 0.17754405174952453
+Epoch 4 - Training loss: 0.15260393844087367
+Epoch 5 - Training loss: 0.13266450255664428
+Epoch 6 - Training loss: 0.11540693491856173
+Epoch 7 - Training loss: 0.10346495633575517
+Epoch 8 - Training loss: 0.0926278813777845
+Epoch 9 - Training loss: 0.08502246232739072
+Epoch 10 - Training loss: 0.07835953546338466
+Epoch 11 - Training loss: 0.07222020866444656
+Epoch 12 - Training loss: 0.06560064115768065
+Epoch 13 - Training loss: 0.061649218910058014
+Epoch 14 - Training loss: 0.05637957641062066
+
+Training Time (in minutes) = 2.9450372735659283
+Overall Accuracy Score: 0.972
+Classwise Accuracy Score: [0.9963 0.9972 0.9943 0.9941 0.9938 0.9949 0.9947 0.9935 0.9929 0.9921]
+Training with Loss Function = MSELoss(), Learning Rate = 0.003, Hidden Layer = [128, 64]
+Sequential(
+  (0): Linear(in_features=784, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=128, out_features=64, bias=True)
+  (3): ReLU()
+  (4): Linear(in_features=64, out_features=10, bias=True)
+  (5): LogSoftmax(dim=1)
+)
+C:\Program Files\Python39\lib\site-packages\torch\nn\modules\loss.py:529: UserWarning: Using a target size (torch.Size([64])) that is different to the input size (torch.Size([64, 10])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+Traceback (most recent call last):
+  File "g:\MTechClasses\Machine Learning\Projects\NeuralNet\ques-02-02.py", line 152, in <module>
+    true_label_arr, pred_label_arr = trainAndPredictNeuralNet(criterion = nn.MSELoss(), lr=0.003,hidden_sizes = [128, 64])
+  File "g:\MTechClasses\Machine Learning\Projects\NeuralNet\ques-02-02.py", line 89, in trainAndPredictNeuralNet
+    loss = criterion(logps, labels)  # calculate the NLL loss
+  File "C:\Program Files\Python39\lib\site-packages\torch\nn\modules\module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Program Files\Python39\lib\site-packages\torch\nn\modules\loss.py", line 529, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "C:\Program Files\Python39\lib\site-packages\torch\nn\functional.py", line 3261, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "C:\Program Files\Python39\lib\site-packages\torch\functional.py", line 75, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (10) must match the size of tensor b (64) at non-singleton dimension 1
