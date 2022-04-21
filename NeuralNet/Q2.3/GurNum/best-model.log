@@ -1,0 +1,205 @@
+torch.Size([64, 1, 32, 32])
+torch.Size([64])
+
+ Hidden Layer = [1, 1] Model Accuracy = 0.1797752808988764
+
+ Hidden Layer = [1, 2] Model Accuracy = 0.25842696629213485
+
+ Hidden Layer = [1, 4] Model Accuracy = 0.2640449438202247
+
+ Hidden Layer = [1, 8] Model Accuracy = 0.23595505617977527
+
+ Hidden Layer = [1, 16] Model Accuracy = 0.09550561797752809
+
+ Hidden Layer = [1, 32] Model Accuracy = 0.33707865168539325
+
+ Hidden Layer = [1, 64] Model Accuracy = 0.3089887640449438
+
+ Hidden Layer = [1, 128] Model Accuracy = 0.3595505617977528
+
+ Hidden Layer = [1, 256] Model Accuracy = 0.29213483146067415
+
+ Hidden Layer = [1, 512] Model Accuracy = 0.38202247191011235
+
+ Hidden Layer = [2, 1] Model Accuracy = 0.17415730337078653
+
+ Hidden Layer = [2, 2] Model Accuracy = 0.3146067415730337
+
+ Hidden Layer = [2, 4] Model Accuracy = 0.10112359550561797
+
+ Hidden Layer = [2, 8] Model Accuracy = 0.29775280898876405
+
+ Hidden Layer = [2, 16] Model Accuracy = 0.5056179775280899
+
+ Hidden Layer = [2, 32] Model Accuracy = 0.5393258426966292
+
+ Hidden Layer = [2, 64] Model Accuracy = 0.6629213483146067
+
+ Hidden Layer = [2, 128] Model Accuracy = 0.5168539325842697
+
+ Hidden Layer = [2, 256] Model Accuracy = 0.5786516853932584
+
+ Hidden Layer = [2, 512] Model Accuracy = 0.6573033707865169
+
+ Hidden Layer = [4, 1] Model Accuracy = 0.09550561797752809
+
+ Hidden Layer = [4, 2] Model Accuracy = 0.39325842696629215
+
+ Hidden Layer = [4, 4] Model Accuracy = 0.5730337078651685
+
+ Hidden Layer = [4, 8] Model Accuracy = 0.7696629213483146
+
+ Hidden Layer = [4, 16] Model Accuracy = 0.848314606741573
+
+ Hidden Layer = [4, 32] Model Accuracy = 0.7808988764044944
+
+ Hidden Layer = [4, 64] Model Accuracy = 0.8595505617977528
+
+ Hidden Layer = [4, 128] Model Accuracy = 0.8820224719101124
+
+ Hidden Layer = [4, 256] Model Accuracy = 0.898876404494382
+
+ Hidden Layer = [4, 512] Model Accuracy = 0.9157303370786517
+
+ Hidden Layer = [8, 1] Model Accuracy = 0.29775280898876405
+
+ Hidden Layer = [8, 2] Model Accuracy = 0.38764044943820225
+
+ Hidden Layer = [8, 4] Model Accuracy = 0.7640449438202247
+
+ Hidden Layer = [8, 8] Model Accuracy = 0.8595505617977528
+
+ Hidden Layer = [8, 16] Model Accuracy = 0.9213483146067416
+
+ Hidden Layer = [8, 32] Model Accuracy = 0.8932584269662921
+
+ Hidden Layer = [8, 64] Model Accuracy = 0.9213483146067416
+
+ Hidden Layer = [8, 128] Model Accuracy = 0.9325842696629213
+
+ Hidden Layer = [8, 256] Model Accuracy = 0.9101123595505618
+
+ Hidden Layer = [8, 512] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [16, 1] Model Accuracy = 0.1853932584269663
+
+ Hidden Layer = [16, 2] Model Accuracy = 0.449438202247191
+
+ Hidden Layer = [16, 4] Model Accuracy = 0.7191011235955056
+
+ Hidden Layer = [16, 8] Model Accuracy = 0.8539325842696629
+
+ Hidden Layer = [16, 16] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [16, 32] Model Accuracy = 0.9325842696629213
+
+ Hidden Layer = [16, 64] Model Accuracy = 0.9438202247191011
+
+ Hidden Layer = [16, 128] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [16, 256] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [16, 512] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [32, 1] Model Accuracy = 0.17415730337078653
+
+ Hidden Layer = [32, 2] Model Accuracy = 0.3202247191011236
+
+ Hidden Layer = [32, 4] Model Accuracy = 0.8370786516853933
+
+ Hidden Layer = [32, 8] Model Accuracy = 0.9157303370786517
+
+ Hidden Layer = [32, 16] Model Accuracy = 0.9438202247191011
+
+ Hidden Layer = [32, 32] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [32, 64] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [32, 128] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [32, 256] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [32, 512] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [64, 1] Model Accuracy = 0.25842696629213485
+
+ Hidden Layer = [64, 2] Model Accuracy = 0.43820224719101125
+
+ Hidden Layer = [64, 4] Model Accuracy = 0.5280898876404494
+
+ Hidden Layer = [64, 8] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [64, 16] Model Accuracy = 0.9213483146067416
+
+ Hidden Layer = [64, 32] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [64, 64] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [64, 128] Model Accuracy = 0.9438202247191011
+
+ Hidden Layer = [64, 256] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [64, 512] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [128, 1] Model Accuracy = 0.25842696629213485
+
+ Hidden Layer = [128, 2] Model Accuracy = 0.4606741573033708
+
+ Hidden Layer = [128, 4] Model Accuracy = 0.5842696629213483
+
+ Hidden Layer = [128, 8] Model Accuracy = 0.8932584269662921
+
+ Hidden Layer = [128, 16] Model Accuracy = 0.9382022471910112
+
+ Hidden Layer = [128, 32] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [128, 64] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [128, 128] Model Accuracy = 0.9438202247191011
+
+ Hidden Layer = [128, 256] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [128, 512] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [256, 1] Model Accuracy = 0.30337078651685395
+
+ Hidden Layer = [256, 2] Model Accuracy = 0.46629213483146065
+
+ Hidden Layer = [256, 4] Model Accuracy = 0.7808988764044944
+
+ Hidden Layer = [256, 8] Model Accuracy = 0.9101123595505618
+
+ Hidden Layer = [256, 16] Model Accuracy = 0.9438202247191011
+
+ Hidden Layer = [256, 32] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [256, 64] Model Accuracy = 0.9662921348314607
+
+ Hidden Layer = [256, 128] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [256, 256] Model Accuracy = 0.9438202247191011
+
+ Hidden Layer = [256, 512] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [512, 1] Model Accuracy = 0.19101123595505617
+
+ Hidden Layer = [512, 2] Model Accuracy = 0.5112359550561798
+
+ Hidden Layer = [512, 4] Model Accuracy = 0.8764044943820225
+
+ Hidden Layer = [512, 8] Model Accuracy = 0.9101123595505618
+
+ Hidden Layer = [512, 16] Model Accuracy = 0.9325842696629213
+
+ Hidden Layer = [512, 32] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [512, 64] Model Accuracy = 0.9550561797752809
+
+ Hidden Layer = [512, 128] Model Accuracy = 0.949438202247191
+
+ Hidden Layer = [512, 256] Model Accuracy = 0.9606741573033708
+
+ Hidden Layer = [512, 512] Model Accuracy = 0.949438202247191
+
+
+Best model :: Hidden Layer = [256, 64] Model Accuracy = 0.9662921348314607
