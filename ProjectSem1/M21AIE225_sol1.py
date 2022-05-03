@@ -39,7 +39,7 @@ for index in range(1, num_of_images + 1):
     plt.imshow(
         np.rot90(np.rot90(np.rot90(images[index].numpy().T))), interpolation="nearest")
     plt.title(class_list[labels[index]])
-
+plt.show()
 print('Classes : ', class_list)
 
 # %%
@@ -143,6 +143,7 @@ def view_classify(img, ps):
     ax2.set_title('Class Probability')
     ax2.set_xlim(0, 1.1)
     plt.tight_layout()
+    plt.show()
 
 
 # %%
