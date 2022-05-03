@@ -50,6 +50,7 @@ for index in range(1, num_of_images + 1):
     plt.imshow(
         np.rot90(np.rot90(np.rot90(images[index].numpy().T))), interpolation="nearest")
     plt.title(class_list[labels[index]])
+plt.show()
 print('Classes : ', class_list)
 
 # %%
@@ -98,11 +99,11 @@ class CNN(nn.Module):
         )
 
         self.classification_model = nn.Sequential(
-            nn.Dropout(0.4),
+            nn.Dropout(0.5),
             # in_features = 64*6*6 = 2304
             nn.Linear(in_features=2048, out_features=512),
             nn.ReLU(),
-            nn.Dropout(0.2),
+            nn.Dropout(0.3),
             nn.Linear(in_features=512, out_features=64),
             nn.ReLU(),
             nn.Linear(in_features=64, out_features=num_classes),
